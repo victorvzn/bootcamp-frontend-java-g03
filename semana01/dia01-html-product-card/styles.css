@@ -1,5 +1,39 @@
-/*
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+
+  background-color: hsl(30, 38%, 92%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
 }
-*/
+
+.container {
+  width: 650px;
+  border: 1px solid red;
+
+  display: flex;
+}
+
+.photo {
+  /* background-color: blue; */
+
+  width: 350px;
+
+  background-image: url(./images/image-product-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: 14px 0 0 14px;
+}
+
+.content {
+  background-color: green;
+
+  width: 300px;
+}
