@@ -18,6 +18,10 @@ body {
   /* border: 1px solid red; */
 
   display: flex;
+
+  height: 432px;
+
+  /* box-shadow: 3px 3px 4px #cacaca; */
 }
 
 .photo {
@@ -38,6 +42,8 @@ body {
   width: 300px;
 
   padding: 14px 28px 14px 28px;
+
+  border-radius: 0 14px 14px 0;
 }
 
 .content h3 {
