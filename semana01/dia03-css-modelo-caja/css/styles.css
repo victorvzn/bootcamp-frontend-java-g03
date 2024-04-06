@@ -61,7 +61,31 @@ img {
 
 /* UTILS */
 
-/* ... */
+.wrapper {
+  /* 3rem = 3 * 14px = 42px */
+
+  width: min(100% - 3rem, 1440px);
+  
+  margin: 0 auto;
+}
 
 /* HEADER */
 
+.header {
+  /* border: 1px solid red; */
+
+  font-family: var(--font-primary);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 4rem; /* 4rem = 4 * 14px = 56px */
+}
+
+.header__nav {
+  /* border: 1px solid green; */
+
+  display: flex;
+  gap: 2rem; /* 2rem = 2 * 14px = 28px */
+}
