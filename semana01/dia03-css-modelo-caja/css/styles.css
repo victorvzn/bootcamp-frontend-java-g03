@@ -97,7 +97,7 @@ img {
 /* HERO */
 
 .hero {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   flex-direction: column;
@@ -112,8 +112,49 @@ img {
   background-image: url(../images/bg-curvy-desktop.svg);
   background-repeat: no-repeat;
   background-position: bottom;
+
+  /* background: url(../images/bg-curvy-desktop.svg) no-repeat bottom; */
 }
 
-.hero__title {}
-.hero__text {}
-.hero__button {}
+.hero__title {
+  /* border: 1px solid yellow; */
+
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: 2.5rem;
+  line-height: 1.5; /* Interlineado */
+
+  width: min(100% - 3rem, 720px);
+}
+
+.hero__text {
+  /* border: 1px solid orangered; */
+
+  font-family: var(--font-secondary);
+  padding: 0 7rem;
+  line-height: 1.5;
+
+  width: min(100% - 3rem, 720px);
+}
+
+.hero__button {
+  border: 1px solid orangered;
+
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-white);
+
+  border: 0;
+  border-radius: 7rem;
+  padding: 1rem 1.5rem;
+  min-width: 220px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent-cyan-gradient) 0%,
+      var(--accent-blue-gradient) 100%
+    );
+}
