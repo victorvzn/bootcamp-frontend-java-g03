@@ -159,3 +159,52 @@ img {
       var(--accent-blue-gradient) 100%
     );
 }
+
+.hero__button:hover {
+  background: var(--accent-blue-gradient);
+}
+
+/* FEATURES */
+
+.features {
+  /* border: 1px solid red; */
+
+  background-color: var(--primary-dark-blue-main);
+
+  display: grid;
+  grid-template-columns: 340px;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.feature {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem
+}
+
+.feature__title {
+  font-family: var(--font-primary);
+}
+
+.feature__text {
+  font-family: var(--font-secondary);
+}
+
+/*
+576px -> pantallas pequeñas (celulares)
+768px -> pantallas pequeñas (tablets y celulares)
+992px -> pantallas medianas (Desktop)
+1200px -> pantallas grandes (Desktops, TVs)
+*/
+
+/* MEDIA QUERIES: La siguiente regla css se aplica solo para dispositivos mayores a 768px (Tables, Desktop, TVs, etc) */
+
+@media screen and (min-width: 768px) {
+  .features {
+    grid-template-columns: 340px 340px;
+  }
+}
