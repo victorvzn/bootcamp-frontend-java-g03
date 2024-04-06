@@ -69,6 +69,10 @@ img {
   margin: 0 auto;
 }
 
+.hidden {
+  display: none;
+}
+
 /* HEADER */
 
 .header {
@@ -89,3 +93,5 @@ img {
   display: flex;
   gap: 2rem; /* 2rem = 2 * 14px = 28px */
 }
+
+/* HERO */
