@@ -161,5 +161,5 @@ console.log(cadena1.length === cadena2.length)
 // 5. Retornar True si un numero es impar sino devolver False
 // 6. calcular el area de un triangulo y mostrar su resultado si tenemos los valores base y altura
 
-// 7. Almacenar en una constante un número de 3 cifras y mostrar la suma de sus cifras elevada al cubo.
-// 8. Almacenar en una constante un monto de dinero, luego mostrar cuanto le toca a cada socio según la siguiente tabla: SOCIO A = 30%, SOCIO B = 20%, SOCIO C = 60%
+// 7. (TODO) Almacenar en una constante un número de 3 cifras y mostrar la suma de sus cifras elevada al cubo.
+// 8. (TODO) Almacenar en una constante un monto de dinero, luego mostrar cuanto le toca a cada socio según la siguiente tabla: SOCIO A = 30%, SOCIO B = 20%, SOCIO C = 60%
