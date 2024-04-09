@@ -278,3 +278,90 @@ if (edadPersona >= 18) {
 // 4. Retornar true si un numero es primo sino devolver false
 //    Pista: un numero primo es divisible por sí mismo y por 1
 // 5. Devolver un valor que se incremente de dos en dos y devuelva los menores a 10
+
+// FUNCIONES (Son bloques de código que podemos reutilizar)
+
+// 1. Definimos una función
+function nombreDeLaFuncion() {
+  // Cuerpo/bloque de la función donde va la lógica a ejecutar
+}
+
+// 2. Ejecutar/llamar una función
+nombreDeLaFuncion()
+
+// Funciones sin parámetros
+
+function imprimirMiNombre() {
+  console.log('Hola soy Victor')
+  console.log('Y soy Frontend')
+}
+
+imprimirMiNombre()
+imprimirMiNombre()
+
+// Funciones con parámetros
+
+function imprimirUnNombre(nombre) {
+  console.log('imprimirUnNombre:', 'Hola soy ' + nombre)
+}
+
+imprimirUnNombre() // Hola soy undefined
+imprimirUnNombre('Marisol') // Hola soy Marisol
+
+function imprimirNombreYApellido(nombre, apellido, edad) {
+  // console.log('Hola soy ' + nombre + ' ' + apellido + ' y tengo ' + edad + ' años.') // Concatenación (operador de concatenación)
+  console.log(`Hola soy ${nombre} ${apellido} y tengo ${edad} años.`) // Template strings
+}
+
+imprimirNombreYApellido('Victor', 'Villazón', 37)
+
+// Funciones con valores por defecto
+
+function imprimirNombreYApellidoConValoresPorDefecto(nombre = 'Anónimo', apellido = '', edad) {
+  // console.log('Hola soy ' + nombre + ' ' + apellido + ' y tengo ' + edad + ' años.') // Concatenación (operador de concatenación)
+  // if (!edad) {
+  //   console.log('Faltó ingresar la edad')
+  //   return
+  // }
+  console.log(`Hola soy ${nombre} ${apellido} y tengo ${edad} años.`) // Template strings
+}
+
+imprimirNombreYApellidoConValoresPorDefecto()
+
+// Funciones sin retorno de valor
+
+function esMayorOMenorDeEdad(edad) {
+  if (edad >= 18) {
+    console.log('Mayor de edad')
+  } else {
+    console.log('Menor de edad')
+  }
+}
+
+esMayorOMenorDeEdad(37)
+esMayorOMenorDeEdad(7)
+esMayorOMenorDeEdad(3)
+
+// Funciones con retorno de valor
+
+function esMayorOMenorDeEdadConRetorno(edad) {
+  if (edad >= 18) {
+    return 'Mayor de edad'
+  } else {
+    return 'Menor de edad'
+  }
+}
+
+console.log(esMayorOMenorDeEdadConRetorno(15))
+console.log(esMayorOMenorDeEdadConRetorno(25))
+console.log(esMayorOMenorDeEdadConRetorno(13))
+
+// EJERCICIOS (TODO)
+
+// 1. Usando funciones determinar si la edad de una persona es mayor de edad o menor de edad mostrando 'Mayor de edad' o 'Menor de edad'
+
+// PROMPT para leer valores del usuario
+
+// const tuEdad = prompt('Ingresa tu edad')
+
+// console.log(tuEdad)
