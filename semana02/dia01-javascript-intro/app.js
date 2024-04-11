@@ -361,7 +361,35 @@ console.log(esMayorOMenorDeEdadConRetorno(13))
 // 1. Usando funciones determinar si la edad de una persona es mayor de edad o menor de edad mostrando 'Mayor de edad' o 'Menor de edad'
 
 // PROMPT para leer valores del usuario
-
 // const tuEdad = prompt('Ingresa tu edad')
-
 // console.log(tuEdad)
+
+
+// ARROW FUNCTIONS - Funciones flecha
+
+// Aparece en ES6, y son una forma alternativa y más corta de escribir funciones en Javascript
+
+
+// Forma en ES5
+
+function suma(numero1, numero2) {
+  // Lógica de la función
+  return numero1 + numero2
+}
+
+suma(5, 9) // 14
+
+// Forma en ES6
+
+const multiplicacion = (numero1, numero2) => {
+  // logica de la funcion
+
+  return numero1 + numero2
+}
+
+const resta = (numero1, numero2) => numero1 - numero2
+
+const duplicarNumero = numero => numero * 2
+
+console.log(duplicarNumero(9))
+
