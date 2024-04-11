@@ -393,3 +393,18 @@ const duplicarNumero = numero => numero * 2
 
 console.log(duplicarNumero(9))
 
+// OPERADOR TERNARIO - CONDICIÓN ? TRUE : FALSE
+
+const esPublico = false
+
+let mensaje = ''
+
+if (esPublico) {
+  mensaje = 'Soy de acceso público'
+} else {
+  mensaje = 'Soy un contenido privado'
+}
+
+const mensaje2 = esPublico ? 'Soy de acceso público' : 'Soy un contenido privado'
+
+console.log(mensaje2)
