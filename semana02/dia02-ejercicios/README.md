@@ -16,6 +16,16 @@ const ovejas = [
 
 function contarOvejas(ovejas) {
   // Aquí su lógica
+  return ovejas.filter(function(oveja) {
+    const nameLowered = oveja.name.toLowerCase()
+    const regex = /[nN].*[aA]|[aA].*[nN]/;
+    
+    const isRedColor = oveja.color === 'rojo'
+    const hasLetterN = nameLowered.includes('n')
+    const hasLetterA = nameLowered.includes('a')
+
+    return isRedColor && hasLetterN && hasLetterA
+  })
 }
 
 const ovejasFiltradas = contarOvejas(ovejas)
