@@ -88,4 +88,47 @@ getCoins(16) // [1, 0, 1, 1, 0, 0] -> una moneda de 1 céntimo, una de 5 y una d
 getCoins(100) // [0, 0, 0, 0, 0, 2] -> dos monedas de 50 céntimos
 ```
 
+### [Reto13 - Envuelve regalos con asteriscos](https://2021.adventjs.dev/challenges/13)
+
+```js
+// Vamos a crear una función que pasándole un array de regalos, nos devuelva otro array pero donde todos los regalos han sido envueltos con asteriscos tanto por arriba como por los lados.
+
+// Sólo tienes que tener en cuenta unas cosillas ✌️:
+
+// Si el array está vacío, devuelve un array vacío
+// Los regalos son emojis 🎁... por lo que tenlo en cuenta a la hora de contar su longitud...
+// Por suerte, cada posición del array siempre tiene la misma longitud...
+
+function wrapGifts(gifts) {
+  // Aquí la lógica de esta función
+  
+}
+
+wrapGifts(["📷", "⚽️"])
+/* Resultado:
+[ '****',
+  '*📷*',
+  '*⚽️*',
+  '****'
+]
+*/
+
+wrapGifts(["🏈🎸", "🎮🧸"])
+/* Resultado:
+[ '******',
+  '*🏈🎸*',
+  '*🎮🧸*',
+  '******'
+]
+*/
+
+wrapGifts(["📷"])
+/* Resultado:
+[ '****',
+  '*📷*',
+  '****'
+]
+*/
+```
+
 * https://adventjs.dev/ (2021)
