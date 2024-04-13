@@ -1,4 +1,5 @@
 import fetchCountries from './services.js'
+import { renderCountries } from './utils.js'
 
 fetchCountries()
-  .then(countries => console.log(countries))
+  .then(countries => renderCountries(countries))
