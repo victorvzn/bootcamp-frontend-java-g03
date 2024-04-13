@@ -10,7 +10,21 @@ const fetchPosts = () => {
 const renderPosts = (posts = []) => {
   const appDiv = document.getElementById('app')
 
-  console.log(appDiv)
+  let postList = ''
+
+  posts.forEach(post => {
+    // console.log(post)
+
+    postList += `
+      <div>
+        <h2>${post.title}</h2>
+      </div>
+    `
+  })
+
+  // console.log(postList)
+  
+  appDiv.innerHTML = postList
 }
 
 fetchPosts()
