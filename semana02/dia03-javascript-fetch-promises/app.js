@@ -1,4 +1,45 @@
+const url = 'https://jsonplaceholder.typicode.com/posts'
 
-// https://jsonplaceholder.typicode.com/todos
+const fetchPosts = () => {
+  console.log('Llamando al api de JSONPLACEHOLDER')
 
-console.log('Hola JS')
+  return fetch(url)
+    .then(response => response.json())
+}
+
+const renderPosts = (posts = []) => {
+  const appDiv = document.getElementById('app')
+
+  console.log(appDiv)
+}
+
+fetchPosts()
+  .then(posts => {
+    console.log(posts)
+    renderPosts(posts)
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const url = 'https://jsonplaceholder.typicode.com/todos'
+
+// fetch(url) // Devuelve una promesa (Promise)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data) // Podemos usar el objeto JS
+//   })
+//   .catch(error => {
+//     console.log(error)
+//   })
