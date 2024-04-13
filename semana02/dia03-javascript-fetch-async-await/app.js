@@ -3,15 +3,18 @@ const url = 'https://jsonplaceholder.typicode.com/posts'
 const fetchPosts = async () => {
   // return fetch(url)
   //   .then(response => response.json())
+
   try {
     const response = await fetch(url)
 
-    // ok === STATUS CODE 200
+    // ok === STATUS CODE 200 / 400
     if (!response.ok) {
       throw new Error('ERROR HTTP:', response.status)
     }
+
+    const json = await response.json()
     
-    return await response.json() // Aquí podemos procesar o modificar el json entrante
+    return json // Aquí podemos procesar o modificar el json entrante
   } catch (error) {
     console.log(error)
   }
