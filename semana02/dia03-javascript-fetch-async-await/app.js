@@ -1,10 +1,14 @@
 const url = 'https://jsonplaceholder.typicode.com/posts'
 
-const fetchPosts = () => {
-  console.log('Llamando al api de JSONPLACEHOLDER')
+const fetchPosts = async () => {
+  // return fetch(url)
+  //   .then(response => response.json())
 
-  return fetch(url)
-    .then(response => response.json())
+  const response = await fetch(url)
+
+  const json = await response.json()
+
+  return json
 }
 
 const renderPosts = (posts = []) => {
@@ -28,13 +32,19 @@ const renderPosts = (posts = []) => {
   appDiv.innerHTML = postList
 }
 
-fetchPosts()
-  .then(posts => {
-    console.log(posts)
-    renderPosts(posts)
-  })
+// fetchPosts()
+//   .then(posts => {
+//     console.log(posts)
+//     renderPosts(posts)
+//   })
 
+async function init() {
+  const posts = await fetchPosts()
 
+  renderPosts(posts)
+}
+
+init()
 
 
 
