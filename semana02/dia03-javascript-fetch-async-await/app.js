@@ -6,9 +6,7 @@ const fetchPosts = async () => {
 
   const response = await fetch(url)
 
-  const json = await response.json()
-
-  return json
+  return await response.json()
 }
 
 const renderPosts = (posts = []) => {
