@@ -16,6 +16,11 @@ function App() {
       id: 3,
       title: 'Aprender React.js',
       completed: false
+    },
+    {
+      id: 4,
+      title: 'Aprender React.js + TAilwind',
+      completed: false
     }
   ]
 
@@ -49,55 +54,26 @@ function App() {
 
       <section className="mt-8">
         <ul className="flex flex-col gap-2">
-          <li className="flex">
-            <input
-              className="mr-2"
-              type="checkbox"
-            />
-            <div className="w-full flex justify-between items-center">
-              <div>
-                Task name
-              </div>
-              <button
-                className="bg-red-300 rounded-lg px-2 py-2"
-              >
-                ❌
-              </button>
-            </div>
-          </li>
-          <li className="flex">
-            <input
-              className="mr-2"
-              type="checkbox"
-            />
-            <div className="w-full flex justify-between items-center">
-              <div>
-                Task name
-              </div>
-              <button
-                className="bg-red-300 rounded-lg px-2 py-2"
-              >
-                ❌
-              </button>
-            </div>
-          </li>
-          <li className="flex">
-            <input
-              className="mr-2"
-              type="checkbox"
-              checked
-            />
-            <div className="w-full flex justify-between items-center">
-              <div className="line-through">
-                Task name
-              </div>
-              <button
-                className="bg-red-300 rounded-lg px-2 py-2"
-              >
-                ❌
-              </button>
-            </div>
-          </li>
+          {todos.map(todo => {
+            return (
+              <li className="flex" key={todo.id}>
+                <input
+                  className="mr-2"
+                  type="checkbox"
+                />
+                <div className="w-full flex justify-between items-center">
+                  <div>
+                    {todo.title}
+                  </div>
+                  <button
+                    className="bg-red-300 rounded-lg px-2 py-2"
+                  >
+                    ❌
+                  </button>
+                </div>
+              </li>
+            )
+          })}
         </ul>
       </section>
     </main>
