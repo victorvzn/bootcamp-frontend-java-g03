@@ -25,6 +25,21 @@ function App() {
   ]
 
   const [todos, setTodos] = useState(DEFAULT_TODOS)
+  const [input, setInput] = useState('')
+
+  const handleChange = (event) => {
+    // Estamos capturando lo que escribimos en la caja de texto
+
+    const value = event.target.value
+
+    setInput(value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    console.log('Añadiendo una nueva tarea...')
+  }
 
   return (
     <main
@@ -34,12 +49,15 @@ function App() {
 
       {/* {JSON.stringify(todos)} */}
 
-      <form>
+      {/* {input} */}
+
+      <form onSubmit={handleSubmit}>
         <input
           className="w-full border my-3 p-3"
           type="text"
           placeholder="¿Qué deseas hacer hoy?"
           required
+          onChange={handleChange}
         />
       </form>
 
