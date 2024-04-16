@@ -1,8 +1,24 @@
-# React + Vite
+# Ejercicio para calcular el Indice de Masa Corporal (IMC)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Requirimientos
 
-Currently, two official plugins are available:
+* [ ] Añadir un formulario con dos cajas de texto y un botón. Una es la altura(cm) y la otra es el peso(kg)
+* [ ] Mostrar en pantalla el resultado de aplicar la fórmula de IMC.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+IMC = peso / altura * altura
+
+* EL IMC es el peso(en kilos) entre la altura(en metros) al cuadrado.
+```
+
+**Condiciones del IMC:**
+
+* Baja: < 18.5
+* Normal: < 18.5 - 24.9
+* Sobrepeso: < 25 - 29.9 
+* Obeso: > 30
+
+### Referencias
+
+![Alt text](https://t2.uc.ltmcdn.com/es/posts/0/5/0/como_calcular_el_indice_de_masa_corporal_7050_600.jpg)
+![Alt text](https://static.tuasaude.com/media/article/me/dr/imc_15748_l.jpg)
