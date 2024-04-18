@@ -76,6 +76,15 @@ const App = () => {
     setTodos(newTodos)
   }
 
+  const completedTodos = todos.filter(todo => todo.completed).length
+  const totalTodos = todos.length
+
+  const handleClearTodos = (event) => {
+    const incompletedTodos = todos.filter(todo => !todo.completed)
+
+    setTodos(incompletedTodos)
+  }
+
   return (
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg shadow-lg p-4"
@@ -101,13 +110,18 @@ const App = () => {
         />
       </form>
 
-      {/* TODO: RETO1 - Añadir una estadística de cuando tareas estan completadas */}
+      {/* TODO: RETO1 - Añadir una estadística de cuantas tareas estan completadas */}
       {/* TODO: RETO2 - Completar la funcionalidad del botón limpiar tareas */}
 
-      <div className="flex justify-between items-center">
-        <span className="text-2xl font-bold">1 de 3</span>
-        <button className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-600 duration-300">Limpiar tareas completadas</button>
-      </div>
+      {todos.length > 0 && (
+        <div className="flex justify-between items-center">
+          <span className="text-2xl font-bold">{completedTodos} de {totalTodos}</span>
+          <button
+            className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-600 duration-300"
+            onClick={handleClearTodos}
+          >Limpiar tareas completadas</button>
+        </div>
+      )}
 
       <section className="mt-8">
         <ul className="flex flex-col gap-2">
@@ -141,7 +155,7 @@ const App = () => {
         </ul>
       </section>
 
-      <pre>{JSON.stringify(todos, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(todos, null, 2)}</pre> */}
     </main>
   )
 }
