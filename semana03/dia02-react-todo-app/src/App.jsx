@@ -28,6 +28,26 @@ const App = () => {
     setInput(value)
   }
 
+  const handleSubmit = (event) => {
+    // Evita que se actualice la página
+    event.preventDefault();
+
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title: input,
+      completed: false
+    }
+
+    const updatedTodos = [...todos, newTodo]
+
+    setTodos(updatedTodos) // <- Nos ayuda a insertar un nuevo todo
+
+    // TODO: Limpiar la caja de texto después de añadir un nuevo todo
+
+    // console.log(input)
+    // console.log('Agregando nueva tarea...')
+  }
+
   return (
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg shadow-lg p-4"
@@ -36,7 +56,10 @@ const App = () => {
 
       {/* <pre>{JSON.stringify(todos, null, 2)}</pre> */}
 
-      <form>
+      <form
+        className="flex items-center gap-2"
+        onSubmit={handleSubmit}
+      >
         <input
           className="w-full border my-3 p-3"
           type="text"
@@ -45,7 +68,11 @@ const App = () => {
           onChange={handleChange}
           value={input}
         />
-        {input}
+        <input
+          className="bg-blue-300 font-bold rounded-lg px-2 py-2 cursor-pointer"
+          type="submit"
+          value="Añadir"
+        />
       </form>
 
       <section className="mt-8">
