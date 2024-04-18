@@ -60,13 +60,27 @@ const App = () => {
     //console.log('eliminando una tarea...', event.target.dataset.id)
   }
 
+  const handleCompleted = (event) => {
+    const idSelected = event.target.dataset.id
+    const isChecked = event.target.checked
+
+    console.log(idSelected, isChecked)
+
+    const newTodos = todos.map(todo => {
+      if (todo.id === idSelected) {
+        return { ...todo, completed: isChecked } // Modificamos la propiedad completed
+      }
+      return todo // Deja el objeto sin modificaciones
+    })
+
+    setTodos(newTodos)
+  }
+
   return (
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg shadow-lg p-4"
     >
       <h1 className="text-2xl font-bold text-center">App</h1>
-
-      {/* <pre>{JSON.stringify(todos, null, 2)}</pre> */}
 
       <form
         className="flex items-center gap-2"
@@ -87,6 +101,14 @@ const App = () => {
         />
       </form>
 
+      {/* TODO: RETO1 - Añadir una estadística de cuando tareas estan completadas */}
+      {/* TODO: RETO2 - Completar la funcionalidad del botón limpiar tareas */}
+
+      <div className="flex justify-between items-center">
+        <span className="text-2xl font-bold">1 de 3</span>
+        <button className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-600 duration-300">Limpiar tareas completadas</button>
+      </div>
+
       <section className="mt-8">
         <ul className="flex flex-col gap-2">
           {todos.map(todo => {
@@ -95,9 +117,14 @@ const App = () => {
                 <input
                   className="mr-2"
                   type="checkbox"
+                  data-id={todo.id}
+                  onChange={handleCompleted}
+                  checked={todo.completed}
                 />
                 <div className="w-full flex justify-between items-center">
-                  <span>
+                  <span
+                    className={todo.completed ? 'line-through' : ''}
+                  >
                     {todo.title}
                   </span>
                   <button
@@ -113,6 +140,8 @@ const App = () => {
           })}
         </ul>
       </section>
+
+      <pre>{JSON.stringify(todos, null, 2)}</pre>
     </main>
   )
 }
