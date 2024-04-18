@@ -42,10 +42,22 @@ const App = () => {
 
     setTodos(updatedTodos) // <- Nos ayuda a insertar un nuevo todo
 
-    // TODO: Limpiar la caja de texto después de añadir un nuevo todo
+    // DONE: Limpiar la caja de texto después de añadir un nuevo todo
+    setInput('')
 
     // console.log(input)
     // console.log('Agregando nueva tarea...')
+  }
+
+  const handleRemoveTodo = (event) => {
+    // const { id } = event.target.dataset
+    const idSelected = event.target.dataset.id
+
+    const newTodos = todos.filter(todo => todo.id !== idSelected)
+
+    setTodos(newTodos)
+
+    //console.log('eliminando una tarea...', event.target.dataset.id)
   }
 
   return (
@@ -90,6 +102,8 @@ const App = () => {
                   </span>
                   <button
                     className="bg-red-300 rounded-lg px-2 py-2"
+                    data-id={todo.id}
+                    onClick={handleRemoveTodo}
                   >
                     ❌
                   </button>
