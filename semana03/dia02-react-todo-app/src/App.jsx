@@ -155,7 +155,7 @@ const App = () => {
         </ul>
       </section>
 
-      {/* <pre>{JSON.stringify(todos, null, 2)}</pre> */}
+      <pre>{JSON.stringify(todos, null, 2)}</pre>
     </main>
   )
 }
