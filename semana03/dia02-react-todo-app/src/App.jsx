@@ -1,5 +1,8 @@
 import { useState } from "react"
 
+import Header from "./components/Header"
+import TodoList from "./components/TodoList"
+
 const App = () => {
   const INITIAL_TODOS = [
     {
@@ -89,7 +92,7 @@ const App = () => {
     <main
       className="bg-yellow-100 w-full max-w-sm mx-auto mt-10 border border-yellow-600 rounded-lg shadow-lg p-4"
     >
-      <h1 className="text-2xl font-bold text-center">App</h1>
+      <Header />
 
       <form
         className="flex items-center gap-2"
@@ -124,35 +127,11 @@ const App = () => {
       )}
 
       <section className="mt-8">
-        <ul className="flex flex-col gap-2">
-          {todos.map(todo => {
-            return (
-              <li className="flex" key={todo.id}>
-                <input
-                  className="mr-2"
-                  type="checkbox"
-                  data-id={todo.id}
-                  onChange={handleCompleted}
-                  checked={todo.completed}
-                />
-                <div className="w-full flex justify-between items-center">
-                  <span
-                    className={todo.completed ? 'line-through' : ''}
-                  >
-                    {todo.title}
-                  </span>
-                  <button
-                    className="bg-red-300 rounded-lg px-2 py-2"
-                    data-id={todo.id}
-                    onClick={handleRemoveTodo}
-                  >
-                    ❌
-                  </button>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
+        <TodoList
+          todos={todos}
+          onCompleted={handleCompleted}
+          onRemoveTodo={handleRemoveTodo}
+        />
       </section>
 
       <pre>{JSON.stringify(todos, null, 2)}</pre>
