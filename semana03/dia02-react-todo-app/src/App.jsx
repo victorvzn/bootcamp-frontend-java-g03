@@ -27,9 +27,17 @@ const App = () => {
     <>
       <h1 className="text- text-center text-red-500">App</h1>
 
-      {JSON.stringify(todos)}
+      {/* <pre>{JSON.stringify(todos, null, 2)}</pre> */}
 
-
+      <section>
+        <ul>
+          {todos.map(todo => {
+            return (
+              <li>{todo.title}</li>
+            )
+          })}
+        </ul>
+      </section>
     </>
   )
 }
