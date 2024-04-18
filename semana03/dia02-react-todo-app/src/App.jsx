@@ -20,6 +20,13 @@ const App = () => {
   ]
 
   const [todos, setTodos] = useState(INITIAL_TODOS)
+  const [input, setInput] = useState('')
+
+  const handleChange = (event) => {
+    const value = event.target.value
+
+    setInput(value)
+  }
 
   return (
     <main
@@ -29,11 +36,23 @@ const App = () => {
 
       {/* <pre>{JSON.stringify(todos, null, 2)}</pre> */}
 
+      <form>
+        <input
+          className="w-full border my-3 p-3"
+          type="text"
+          placeholder="¿Qué deseas hacer hoy?"
+          required
+          onChange={handleChange}
+          value={input}
+        />
+        {input}
+      </form>
+
       <section className="mt-8">
         <ul className="flex flex-col gap-2">
           {todos.map(todo => {
             return (
-              <li className="flex">
+              <li className="flex" key={todo.id}>
                 <input
                   className="mr-2"
                   type="checkbox"
