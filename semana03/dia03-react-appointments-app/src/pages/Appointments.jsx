@@ -17,9 +17,15 @@ const Appointments = () => {
 
   const [appointments, setAppointments] = useState(INITIAL_APPOINTMENTS)
 
+  const handleSaveAppointment = (form) => {
+    setAppointments([...appointments, form])
+  }
+
   return (
     <>
-      <AppointmentsForm />
+      <AppointmentsForm
+        onSaveAppointment={handleSaveAppointment}
+      />
 
       <AppointmentsList
         appointments={appointments}

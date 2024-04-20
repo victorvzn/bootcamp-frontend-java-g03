@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const AppointmentsForm = () => {
+const AppointmentsForm = ({ onSaveAppointment }) => {
   const INITIAL_FORM_STATE = {
     id: '',
     petName: '',
@@ -30,6 +30,7 @@ const AppointmentsForm = () => {
     }
 
     console.log('Guardando cita:', newAppointment)
+    onSaveAppointment(newAppointment)
 
     setForm(INITIAL_FORM_STATE)
   }
