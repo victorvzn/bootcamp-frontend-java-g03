@@ -1,6 +1,10 @@
-const AppointmentsList = () => {
+const AppointmentsList = ({ appointments }) => {
   return (
-    <div>AppointmentsList</div>
+    <>
+      <div>AppointmentsList</div>
+
+      <pre>{JSON.stringify(appointments, null, 2)}</pre>
+    </>
   )
 }
 
