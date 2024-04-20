@@ -1,4 +1,4 @@
-const AppointmentsList = ({ appointments }) => {
+const AppointmentsList = ({ appointments, onConfirmAppointment, onEdit, onRemove }) => {
 
   if (appointments.length === 0) {
     return (
@@ -51,6 +51,29 @@ const AppointmentsList = ({ appointments }) => {
                   <div>
                     <strong>Síntomas:</strong> {appointment.symptoms}
                   </div>
+                </div>
+
+                {/* TODO: Terminar la funcionalidad de los botones confirmar cita y editar cita */}
+
+                <div className="flex flex-col gap-3 mt-3">
+                  <button
+                    className="p-2 bg-green-600 text-white rounded-lg cursor-pointer"
+                    onClick={() => onConfirmAppointment(appointment)}
+                  >
+                    Confirmar Cita
+                  </button>
+                  <button
+                    className="p-2 bg-sky-600 text-white rounded-lg cursor-pointer"
+                    onClick={() => onEdit(appointment)}
+                  >
+                    Editar
+                  </button>
+                  <button
+                    className="p-2 bg-red-600 text-white rounded-lg cursor-pointer"
+                    onClick={() => onRemove(appointment)}
+                  >
+                    Eliminar
+                  </button>
                 </div>
 
               </div>
