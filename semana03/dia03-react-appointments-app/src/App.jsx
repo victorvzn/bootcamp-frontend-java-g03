@@ -1,8 +1,15 @@
-import React from 'react'
+import Header from "./components/Header"
+import Appointments from "./pages/Appointments"
 
 const App = () => {
   return (
-    <div className='text-4xl text-center font-bold'>App</div>
+    <>
+      <Header title="Citas médicas para mascotas" />
+
+      <main className="container m-auto flex ga-12 py-5">
+        <Appointments />
+      </main>
+    </>
   )
 }
 
