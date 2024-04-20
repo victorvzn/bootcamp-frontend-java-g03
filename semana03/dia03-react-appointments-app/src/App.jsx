@@ -6,7 +6,7 @@ const App = () => {
     <>
       <Header title="Citas médicas para mascotas" />
 
-      <main className="container m-auto flex ga-12 py-5">
+      <main className="container m-auto flex gap-12 py-5">
         <Appointments />
       </main>
     </>
