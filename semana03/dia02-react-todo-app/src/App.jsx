@@ -3,6 +3,7 @@ import { useState } from "react"
 import Header from "./components/Header"
 import TodoList from "./components/TodoList"
 import Form from "./components/Form"
+import Stats from "./components/Stats"
 
 const App = () => {
   const INITIAL_TODOS = [
@@ -58,9 +59,6 @@ const App = () => {
     setTodos(newTodos)
   }
 
-  const completedTodos = todos.filter(todo => todo.completed).length
-  const totalTodos = todos.length
-
   const handleClearTodos = (event) => {
     const incompletedTodos = todos.filter(todo => !todo.completed)
 
@@ -81,13 +79,10 @@ const App = () => {
       {/* TODO: RETO2 - Completar la funcionalidad del botón limpiar tareas */}
 
       {todos.length > 0 && (
-        <div className="flex justify-between items-center">
-          <span className="text-2xl font-bold">{completedTodos} de {totalTodos}</span>
-          <button
-            className="bg-blue-500 rounded-lg px-2 py-1 text-white hover:bg-blue-600 duration-300"
-            onClick={handleClearTodos}
-          >Limpiar tareas completadas</button>
-        </div>
+        <Stats
+          todos={todos}
+          onClearTodos={handleClearTodos}
+        />
       )}
 
       <section className="mt-8">
