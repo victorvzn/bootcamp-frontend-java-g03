@@ -21,6 +21,19 @@ const AppointmentsForm = () => {
     setForm({ ...form, [name]: value })
   }
 
+  const handleSaveAppointment = (event) => {
+    event.preventDefault();
+    
+    const newAppointment = {
+      ...form,
+      id: crypto.randomUUID()
+    }
+
+    console.log('Guardando cita:', newAppointment)
+
+    setForm(INITIAL_FORM_STATE)
+  }
+
   return (
     <section className="w-96 p-4">
       <h2 className="text-2xl text-center mb-4">Nuevo paciente</h2>
@@ -29,6 +42,7 @@ const AppointmentsForm = () => {
 
       <form
         className="flex flex-col gap-4"
+        onSubmit={handleSaveAppointment}
       >
         <input
           type="text"
@@ -36,6 +50,7 @@ const AppointmentsForm = () => {
           placeholder="Nombre de la mascota"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.petName}
         />
         <input
           type="number"
@@ -43,6 +58,7 @@ const AppointmentsForm = () => {
           placeholder="Edad de la mascota"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.petAge}
         />
         <input
           type="text"
@@ -50,6 +66,7 @@ const AppointmentsForm = () => {
           placeholder="Dueño de la mascota"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.ownerName}
         />
         <input
           type="date"
@@ -57,6 +74,7 @@ const AppointmentsForm = () => {
           placeholder="Fecha de la cita"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.appointmentDate}
         />
         <input
           type="time"
@@ -64,6 +82,7 @@ const AppointmentsForm = () => {
           placeholder="Hora de la cita"
           className="border p-3 shadow-md rounded-md"
           onChange={handleChange}
+          value={form.appointmentTime}
         />
         <textarea
           name="symptoms"
@@ -71,6 +90,7 @@ const AppointmentsForm = () => {
           className="border p-3 shadow-md rounded-md"
           rows="5"
           onChange={handleChange}
+          value={form.symptoms}
         >
         </textarea>
 
