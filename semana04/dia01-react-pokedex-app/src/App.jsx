@@ -24,10 +24,10 @@ function App() {
   const handleNext = () => setPage(page + 1)
 
   return (
-    <main className="w-1/2 m-auto border p-6 mt-6">
+    <main className="container m-auto border p-6 mt-6">
       <h1 className="text-3xl font-bold underline text-center">Poké Catalog</h1>
       
-      <section className="mt-6">
+      <section className="mt-6 grid grid-cols-4 gap-4">
         {/* TODO: Renderizar cada nombre de los pokemons que se encuentrn en el estado pokemons   */}
         {pokemons.map(pokemon => {
           {/* https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png */}
@@ -48,22 +48,23 @@ function App() {
           )
         })}
 
-        <div className="flex justify-between">
-          <button
-            className="p-2 bg-blue-300 min-w-20"
-            onClick={handlePrev}
-          >
-            Prev
-          </button>
-          <span>{page}</span>
-          <button
-            className="p-2 bg-blue-300 min-w-20"
-            onClick={handleNext}
-          >
-            Next
-          </button>
-        </div>
       </section>
+      
+      <div className="flex justify-between">
+        <button
+          className="p-2 bg-blue-300 min-w-20"
+          onClick={handlePrev}
+        >
+          Prev
+        </button>
+        <span>{page}</span>
+        <button
+          className="p-2 bg-blue-300 min-w-20"
+          onClick={handleNext}
+        >
+          Next
+        </button>
+      </div>
       
       {/* <pre>{JSON.stringify(pokemons, null, 2)}</pre> */}
 
