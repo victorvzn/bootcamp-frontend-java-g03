@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 
+import { fetchPokemons } from "./services/pokemons"
+
 function App() {
   // const [counter, setCounter] = useState(0)
   const [pokemons, setPokemons] = useState([])
@@ -10,16 +12,15 @@ function App() {
   useEffect(() => {
     console.log('useEffect: se ejecuta solo la primera vez')
 
-    const fetchPokemons = async () => {
-      const response = await fetch('https://pokeapi.co/api/v2/pokemon')
-  
-      const data = await response.json()
-  
-      setPokemons(data.results)
-    }
-
     fetchPokemons()
+      .then(data => {
+        setPokemons(data.results)
+      })
   }, [])
+
+  const handlePrev = () => {}
+
+  const handleNext = () => {}
 
   return (
     <main className="w-1/2 m-auto border p-6 mt-6">
@@ -45,6 +46,21 @@ function App() {
             </article>
           )
         })}
+
+        <div className="flex justify-between">
+          <button
+            className="p-2 bg-blue-300 min-w-20"
+            onClick={handlePrev}
+          >
+            Prev
+          </button>
+          <button
+            className="p-2 bg-blue-300 min-w-20"
+            onClick={handleNext}
+          >
+            Next
+          </button>
+        </div>
       </section>
       
       {/* <pre>{JSON.stringify(pokemons, null, 2)}</pre> */}
