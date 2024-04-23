@@ -22,16 +22,23 @@ function App() {
   }, [])
 
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Poké Catalog
-      </h1>
+    <main className="w-1/2 m-auto border border-red-700 p-6">
+      <h1 className="text-3xl font-bold underline text-center">Poké Catalog</h1>
       
-      <section>
+      <section className="mt-6">
         {/* TODO: Renderizar cada nombre de los pokemons que se encuentrn en el estado pokemons   */}
         {pokemons.map(pokemon => {
           return (
-            <article key={pokemon.url}>{pokemon.name}</article>
+            <article
+              key={pokemon.url}
+              className="border rounded-lg bg-slate-100 m-2 p-2"
+            >
+              <h3 className="font-bold text-center uppercase">{pokemon.name}</h3>
+
+              {/* TODO: mostrar la imagen del pokemon correspondiente que se encuentra en su objeto de detalle en la clave "sprites.other.official-artwork.front_default" */}
+
+              <img src="" className="w-40" />
+            </article>
           )
         })}
       </section>
@@ -40,7 +47,7 @@ function App() {
 
 
       {/* <button onClick={() => setCounter(counter + 1)}>{counter}</button> */}
-    </>
+    </main>
   )
 }
 
