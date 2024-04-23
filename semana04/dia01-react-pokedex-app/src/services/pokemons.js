@@ -1,5 +1,7 @@
-export const fetchPokemons = async () => {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon')
+export const fetchPokemons = async (page, limit=3) => {
+  const offset = (page - 1) * limit
+
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
 
   return await response.json()
 }

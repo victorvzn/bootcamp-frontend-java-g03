@@ -5,6 +5,7 @@ import { fetchPokemons } from "./services/pokemons"
 function App() {
   // const [counter, setCounter] = useState(0)
   const [pokemons, setPokemons] = useState([])
+  const [page, setPage] = useState(1)
 
   // useEffect(fx, [dependencias]) <- se ejecuta cuando hay cambios en las dependencias(estados)
   // useEffect(fx, []) <- se ejecuta la primera vez que el componente se renderiza. Esto sirve para hacer llamados a APIs.
@@ -12,15 +13,15 @@ function App() {
   useEffect(() => {
     console.log('useEffect: se ejecuta solo la primera vez')
 
-    fetchPokemons()
+    fetchPokemons(page)
       .then(data => {
         setPokemons(data.results)
       })
-  }, [])
+  }, [page])
 
-  const handlePrev = () => {}
+  const handlePrev = () => setPage(page - 1)
 
-  const handleNext = () => {}
+  const handleNext = () => setPage(page + 1)
 
   return (
     <main className="w-1/2 m-auto border p-6 mt-6">
@@ -54,6 +55,7 @@ function App() {
           >
             Prev
           </button>
+          <span>{page}</span>
           <button
             className="p-2 bg-blue-300 min-w-20"
             onClick={handleNext}
