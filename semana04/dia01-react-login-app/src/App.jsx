@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { getProducts, login } from "./services/auth"
 
 function App() {
   const initialState = {
@@ -7,6 +8,8 @@ function App() {
   }
 
   const [form, setForm] = useState(initialState)
+  const [token, setToken] = useState('')
+  const [products, setProducts] = useState([])
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -14,10 +17,22 @@ function App() {
     setForm({ ...form, [name]: value })
   }
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     
     console.log('Estoy enviando las credenciales del usuario...', form)
+
+    const data = await login(form)
+
+    console.log(data)
+
+    setToken(data.token)
+  }
+
+  const handleGetProducts = async () => {
+    const data = await getProducts(token)
+
+    setProducts(data.products)
   }
 
   return (
@@ -27,6 +42,8 @@ function App() {
       </h1>
 
       {JSON.stringify(form)}
+
+      {token}
 
       <form
         className="flex flex-col gap-2 p-8"
@@ -54,6 +71,23 @@ function App() {
           value="Login"
         />
       </form>
+
+      {
+        token ? (
+          <>
+            <button
+              className="border p-3 bg-green-700 text-white rounded-md cursor-pointer"
+              onClick={handleGetProducts}
+            >Get all products</button>
+
+            <div>{JSON.stringify(products)}</div>
+          </>
+        )
+        : (
+          <h4>¡No hizo login!</h4>
+        )
+      }
+      
     </main>
   )
 }
