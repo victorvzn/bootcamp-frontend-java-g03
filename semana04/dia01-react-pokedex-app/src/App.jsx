@@ -4,8 +4,11 @@ import { fetchPokemons } from "./services/pokemons"
 
 function App() {
   // const [counter, setCounter] = useState(0)
+  const LIMIT = 12
+
   const [pokemons, setPokemons] = useState([])
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(108)
+  const [total, setTotal] = useState(0)
 
   // useEffect(fx, [dependencias]) <- se ejecuta cuando hay cambios en las dependencias(estados)
   // useEffect(fx, []) <- se ejecuta la primera vez que el componente se renderiza. Esto sirve para hacer llamados a APIs.
@@ -13,9 +16,10 @@ function App() {
   useEffect(() => {
     console.log('useEffect: se ejecuta solo la primera vez')
 
-    fetchPokemons(page)
+    fetchPokemons(page, LIMIT)
       .then(data => {
         setPokemons(data.results)
+        setTotal(data.count)
       })
   }, [page])
 
@@ -29,8 +33,12 @@ function App() {
 
   const handleNext = () => {
     // TODO: Validar la paginación cuando llega a la última página. No debe permitir avanzar más allá de la última página.
+    const lastPage = Math.ceil(total / LIMIT)
 
-    
+    if (page === lastPage) {
+      return
+    }
+
     setPage(page + 1)
   }
 
