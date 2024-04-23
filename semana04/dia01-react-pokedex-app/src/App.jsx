@@ -15,7 +15,7 @@ function App() {
   
       const data = await response.json()
   
-      setPokemons(data)
+      setPokemons(data.results)
     }
 
     fetchPokemons()
@@ -29,6 +29,11 @@ function App() {
       
       <section>
         {/* TODO: Renderizar cada nombre de los pokemons que se encuentrn en el estado pokemons   */}
+        {pokemons.map(pokemon => {
+          return (
+            <article key={pokemon.url}>{pokemon.name}</article>
+          )
+        })}
       </section>
       
       <pre>{JSON.stringify(pokemons, null, 2)}</pre>
