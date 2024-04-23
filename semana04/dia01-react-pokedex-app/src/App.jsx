@@ -19,9 +19,20 @@ function App() {
       })
   }, [page])
 
-  const handlePrev = () => setPage(page - 1)
+  const handlePrev = () => {
+    if (page === 1) {
+      return
+    }
+   
+    setPage(page - 1)
+  }
 
-  const handleNext = () => setPage(page + 1)
+  const handleNext = () => {
+    // TODO: Validar la paginación cuando llega a la última página. No debe permitir avanzar más allá de la última página.
+
+    
+    setPage(page + 1)
+  }
 
   return (
     <main className="container m-auto border p-6 mt-6">
