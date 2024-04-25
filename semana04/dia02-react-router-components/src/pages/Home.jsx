@@ -10,7 +10,26 @@ const CharacterList = () => {
   }, [])
 
   return (
-    <h1>Characters</h1>
+    <>
+      <h1>Characters</h1>
+
+      <div class="list-group">
+        {characters.map(character => {
+          return (
+            <a
+              key={character.id}
+              href="#"
+              class="list-group-item list-group-item-action"
+            >
+              {character.name}
+            </a>
+          )
+        })}
+        
+      </div>
+
+      {JSON.stringify(characters)}
+    </>
   )
 }
 
