@@ -2,20 +2,30 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <form>
-      <div className='row mb-3'>
-        <label className='col-2 col-form-label'>Email</label>
-        <div className='col'>
-          <input className='form-control' type='email' />
+    <div className='container'>
+      <form className='card w-25 mx-auto'>
+        <h5 className="card-header">Login</h5>
+        <div className='card-body'>
+          <div className='row mb-3'>
+            <label className='col-form-label'>Email</label>
+            <div className=''>
+              <input className='form-control' type='email' />
+            </div>
+          </div>
+          <div className='row mb-3'>
+            <label className='col-form-label'>Password</label>
+            <div className=''>
+              <input className='form-control' type='password' />
+            </div>
+          </div>
+          <div className='row mb-3'>
+            <button type="button" class="btn btn-primary">
+              Login
+            </button>
+          </div>
         </div>
-      </div>
-      <div className='row mb-3'>
-        <label className='col-2 col-form-label'>Password</label>
-        <div className='col'>
-          <input className='form-control' type='password' />
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   )
 }
 
