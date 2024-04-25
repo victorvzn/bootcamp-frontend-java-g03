@@ -3,19 +3,19 @@ import { Link, Outlet } from "react-router-dom"
 const LayoutBase = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-          <Link class="navbar-brand" to="/">React Router DOM</Link>
-          <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <Link class="nav-link" to="/">Home</Link>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container">
+          <Link className="navbar-brand" to="/">React Router DOM</Link>
+          <div className="collapse navbar-collapse justify-content-end">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" to="/">Home</Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/login">Login</Link>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">Login</Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link" to="/register">Register</Link>
+              <li className="nav-item">
+                <Link className="nav-link" to="/register">Register</Link>
               </li>
             </ul>
           </div>
