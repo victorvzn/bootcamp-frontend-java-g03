@@ -3,9 +3,7 @@ export const fetchCharacters = async (page = 1) => {
 
   const response = await fetch(url)
 
-  const data = await response.json()
-
-  return data.results // Devuelvo el arreglo con los personajes
+  return await response.json()
 }
 
 export const getCharacterById = async (id) => {
