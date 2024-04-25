@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Login = () => {
   return (
     <div className='container'>
@@ -19,7 +17,7 @@ const Login = () => {
             </div>
           </div>
           <div className='row mb-3'>
-            <button type="button" class="btn btn-primary">
+            <button type="button" className="btn btn-primary">
               Login
             </button>
           </div>
