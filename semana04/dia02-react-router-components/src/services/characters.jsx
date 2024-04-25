@@ -1,5 +1,5 @@
-export const fetchCharacters = async () => {
-  const url = 'https://rickandmortyapi.com/api/character'
+export const fetchCharacters = async (page = 1) => {
+  const url = `https://rickandmortyapi.com/api/character/?page=${page}`
 
   const response = await fetch(url)
 
