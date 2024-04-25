@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { fetchCharacters } from "../services/characters"
+import { Link } from 'react-router-dom'
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([])
@@ -14,19 +15,19 @@ const CharacterList = () => {
       <div className="list-group">
         {characters.map(character => {
           return (
-            <a
+            <Link
               key={character.id}
-              href="#"
+              to={`/character/${character.id}`}
               className="list-group-item list-group-item-action"
             >
               {character.name}
-            </a>
+            </Link>
           )
         })}
         
       </div>
 
-      {JSON.stringify(characters)}
+      {/* {JSON.stringify(characters)} */}
     </>
   )
 }
