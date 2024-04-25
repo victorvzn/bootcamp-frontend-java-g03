@@ -1,11 +1,30 @@
-import { Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 const LayoutBase = () => {
   return (
     <>
-      <div>LayoutBase</div>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">React Router DOM</a>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <Link class="nav-link" to="/">Home</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/login">Login</Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/register">Register</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-      <Outlet />
+      <div className="container mt-5">
+        <Outlet />
+      </div>
     </>
   )
 }
