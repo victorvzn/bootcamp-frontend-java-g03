@@ -5,7 +5,7 @@ const LayoutBase = () => {
     <>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-          <a class="navbar-brand" href="#">React Router DOM</a>
+          <Link class="navbar-brand" to="/">React Router DOM</Link>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item">
