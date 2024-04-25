@@ -11,15 +11,13 @@ const CharacterList = () => {
 
   return (
     <>
-      <h1>Characters</h1>
-
-      <div class="list-group">
+      <div className="list-group">
         {characters.map(character => {
           return (
             <a
               key={character.id}
               href="#"
-              class="list-group-item list-group-item-action"
+              className="list-group-item list-group-item-action"
             >
               {character.name}
             </a>
@@ -34,8 +32,6 @@ const CharacterList = () => {
 }
 
 const Home = () => {
-
-
   return (
     <>
       <h3>CharacterList</h3>

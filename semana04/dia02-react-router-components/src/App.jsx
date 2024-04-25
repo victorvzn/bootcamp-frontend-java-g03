@@ -5,6 +5,7 @@ import LayoutBase from './layouts/LayoutBase'
 import HomePage from './pages/Home'
 import LoginPage from './pages/Login'
 import RegisterPage from './pages/Register'
+import CharacterPage from './pages/CharacterPage'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
 
+          <Route path='/character/:id' element={<CharacterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
