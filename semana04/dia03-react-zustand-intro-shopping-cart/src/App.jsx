@@ -4,7 +4,8 @@ export default function App() {
   const {
     count,
     increment,
-    decrement
+    decrement,
+    incrementByValue
   } = useCounterStore()
 
   return (
@@ -12,6 +13,12 @@ export default function App() {
       <h3 className="text-3xl">Counter with Zustand</h3>
 
       <div className="flex items-center gap-4 mt-4">
+        <button
+          className="p-3 bg-green-500 rounded-lg"
+          onClick={() => incrementByValue(-10)}
+        >
+          -10
+        </button>
         <button
           className="p-3 bg-green-500 rounded-lg"
           onClick={decrement}
@@ -24,6 +31,12 @@ export default function App() {
           onClick={increment}
         >
           +1
+        </button>
+        <button
+          className="p-3 bg-green-500 rounded-lg"
+          onClick={() => incrementByValue(10)}
+        >
+          +10
         </button>
       </div>
     </div>
