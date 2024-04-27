@@ -1,9 +1,12 @@
 import { useState } from "react"
 
 import { TbShoppingBag } from "react-icons/tb";
+import { useCartStore } from "../../store/cart";
 
 const Header = () => {
   const [open, setOpen] = useState(false)
+
+  const { cart } = useCartStore()
 
   const classSidebar = 'fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-slate-100 w-80 text-black'
 
@@ -38,12 +41,17 @@ const Header = () => {
           </div>
 
           <div className="flex flex-col gap-1 m-4">
-            <button
-              className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-            >
-              title - price (Qty: 0)
-            </button>
+            {cart.map(product => (
+              <button
+                className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              >
+                {product.title} - ${product.price} (Qty: {product.quantity ?? 0})
+              </button>
+            ))}
+            
           </div>
+
+          {/* {JSON.stringify(cart, null, 2)} */}
         </div>
       </div>
 

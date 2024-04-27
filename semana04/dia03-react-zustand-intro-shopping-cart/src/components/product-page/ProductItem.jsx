@@ -1,6 +1,8 @@
-import React from 'react'
+import { useCartStore } from "../../store/cart"
 
 const ProductItem = ({ product }) => {
+  const { addToCart } = useCartStore()
+
   // DONE: Renderizar los campos de la imagen, titulo, descripción y precio en este componente.
 
   return (
@@ -23,6 +25,7 @@ const ProductItem = ({ product }) => {
           
           <button
             className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            onClick={() => addToCart(product)}
           >
             Add to Cart
           </button>
