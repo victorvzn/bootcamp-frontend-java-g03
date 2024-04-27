@@ -8,7 +8,7 @@ const Header = () => {
           Cart
         </button>
 
-        <div className="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-slate-100 w-80 text-black translate-none">
+        <div className="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-slate-100 w-80 text-black translate-x-full">
           <div className="flex justify-between">
             <h5 className="flex text-2xl font-semibold text-gray-500">
               Cart
