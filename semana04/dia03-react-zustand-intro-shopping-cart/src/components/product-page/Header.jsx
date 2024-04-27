@@ -6,7 +6,7 @@ import { useCartStore } from "../../store/cart";
 const Header = () => {
   const [open, setOpen] = useState(false)
 
-  const { cart } = useCartStore()
+  const { cart, cleanCart, removeFromCart } = useCartStore()
 
   const classSidebar = 'fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-slate-100 w-80 text-black'
 
@@ -35,6 +35,7 @@ const Header = () => {
           <div className="py-3">
             <button
               className="w-full text-slate-900 bg-red-400 hover:bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              onClick={cleanCart}
             >
               Clean Cart
             </button>
@@ -44,6 +45,7 @@ const Header = () => {
             {cart.map(product => (
               <button
                 className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                onClick={() => removeFromCart(product.id)}
               >
                 {product.title} - ${product.price} (Qty: {product.quantity ?? 0})
               </button>
