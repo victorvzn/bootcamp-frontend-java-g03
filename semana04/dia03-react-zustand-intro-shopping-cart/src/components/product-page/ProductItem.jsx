@@ -1,4 +1,5 @@
 import { useCartStore } from "../../store/cart"
+import { formatNumber } from "../../utils"
 
 const ProductItem = ({ product }) => {
   const { addToCart } = useCartStore()
@@ -20,7 +21,7 @@ const ProductItem = ({ product }) => {
         </div>
         <div className="flex flex-col items-center justify-between md:flex-row">
           <span className="text-3xl font-bold text-gray-900">
-            ${product.price}
+            ${formatNumber(product.price)}
           </span>
           
           <button
