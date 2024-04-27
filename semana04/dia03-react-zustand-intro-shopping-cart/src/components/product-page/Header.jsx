@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import { TbShoppingBag } from "react-icons/tb";
+
 const Header = () => {
   const [open, setOpen] = useState(false)
 
@@ -12,8 +14,8 @@ const Header = () => {
       <div className="container mx-auto flex justify-between">
         <h1 className="font-bold">Shopping Cart</h1>
       
-        <button onClick={toggleSidebar}>
-          Cart
+        <button onClick={toggleSidebar} className="text-3xl">
+          <TbShoppingBag />
         </button>
 
         <div
