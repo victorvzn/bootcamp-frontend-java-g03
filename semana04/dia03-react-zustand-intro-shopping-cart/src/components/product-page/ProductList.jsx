@@ -1,4 +1,14 @@
+import { useEffect, useState } from "react"
+import { fetchProducts } from "../../services/products"
+
 const ProductList = () => {
+  const [productList, setProductList] = useState([])
+
+  useEffect(() => {
+    fetchProducts()
+      .then(setProductList)
+  }, [])
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
       <div className="w-full border border-gray-200 rounded-lg min-h-80 shadow">
@@ -24,7 +34,7 @@ const ProductList = () => {
           </div>
         </div>
       </div>
-
+      {JSON.stringify(productList, null, 2)}
     </div>
   )
 }
