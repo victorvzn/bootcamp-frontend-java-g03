@@ -8,6 +8,7 @@ export const cartSlice = createSlice({
   ],
   reducers: {
     addToCart: (state, action) => {
+      /* TODO: Implementar esta función para añadir nuevos productos al carrito de compras */
       console.log('AddToCart', action)
     },
     removeFromCart: (state, action) => {
