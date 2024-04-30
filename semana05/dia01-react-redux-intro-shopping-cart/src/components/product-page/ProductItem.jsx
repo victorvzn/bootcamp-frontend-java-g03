@@ -1,4 +1,10 @@
+import { useDispatch } from 'react-redux'
+
+import { addToCart } from '../../store/cart'
+
 const ProductItem = () => {
+  const dispatch = useDispatch()
+
   return (
     <div className="w-full border border-gray-200 rounded-lg min-h-80 shadow">
       <img
@@ -19,6 +25,7 @@ const ProductItem = () => {
           
           <button
             className="bg-blue-700 hover:bg-blue-800 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            onClick={() => dispatch(addToCart({ id: 999, title: 'test999' }))}
           >
             Add to Cart
           </button>

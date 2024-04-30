@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import { TbShoppingBag } from "react-icons/tb";
 
 const Header = () => {
   const [open, setOpen] = useState(false)
+
+  const cart = useSelector(state => state.cart)
 
   const classSidebar = 'fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-slate-100 w-80 text-black '
 
@@ -56,7 +59,7 @@ const Header = () => {
             </button>
           </div>
 
-          {/* {JSON.stringify(cart, null, 2)} */}
+          <pre>{JSON.stringify(cart, null, 2)}</pre>
         </div>
       </div>
 
