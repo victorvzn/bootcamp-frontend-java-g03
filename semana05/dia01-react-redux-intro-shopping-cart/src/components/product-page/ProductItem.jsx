@@ -14,7 +14,7 @@ const ProductItem = ({ product }) => {
       />
       <div className="px-5 pb-5 flex flex-col gap-2 mt-4">
         <h5 className="text-xl font-semibold text-gray-900">
-          product.title
+          {product.title}
         </h5>
         <div className="text-ellipsis overflow-hidden h-24">
           {product.description}
