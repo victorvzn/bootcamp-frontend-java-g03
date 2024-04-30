@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react"
+import { useProducts } from "../../hooks/useProducts"
 import ProductItem from "./ProductItem"
-import { fetchProducts } from "../../services/products"
 
 const ProductList = () => {
-  const [productList, setProductList] = useState([])
-
-  useEffect(() => {
-    fetchProducts()
-      .then(setProductList)
-  }, [])
+  const { products } = useProducts()
   
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {productList.map(
+      {products.map(
         product => <ProductItem
           key={product.id}
           product={product}
