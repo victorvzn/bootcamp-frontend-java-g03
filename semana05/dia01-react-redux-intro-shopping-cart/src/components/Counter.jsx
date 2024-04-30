@@ -1,7 +1,7 @@
 // PASO-03: acceder al estado iniial y a las acciones
 import { useSelector, useDispatch } from "react-redux"
 
-import { increment, decrement } from "../store/counter"
+import { increment, decrement, incrementByValue } from "../store/counter"
 
 export default function Counter() {
   const counter = useSelector(state => state.counter)
@@ -12,6 +12,10 @@ export default function Counter() {
 
   const handleDecrement = () => dispatch(decrement())
 
+  const handleIncrementeBy10 = () => dispatch(incrementByValue(10))
+
+  const handleDecrementeBy10 = () => dispatch(incrementByValue(-10))
+
   return (
     <div className="flex flex-col items-center bg-[#CD8D7A] p-4">
       <h3 className="text-3xl">Counter with Redux</h3>
@@ -19,6 +23,7 @@ export default function Counter() {
       <div className="flex items-center gap-4 mt-4">
         <button
           className="p-3 bg-green-500 rounded-lg"
+          onClick={handleDecrementeBy10}
         >
           -10
         </button>
@@ -37,6 +42,7 @@ export default function Counter() {
         </button>
         <button
           className="p-3 bg-green-500 rounded-lg"
+          onClick={handleIncrementeBy10}
         >
           +10
         </button>
