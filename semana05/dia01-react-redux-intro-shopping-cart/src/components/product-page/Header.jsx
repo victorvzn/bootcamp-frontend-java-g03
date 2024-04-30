@@ -52,11 +52,16 @@ const Header = () => {
           )}
 
           <div className="flex flex-col gap-1 m-4">
-            <button
-              className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-            >
-              product.title - $product.price (Qty: product.quantity)
-            </button>
+            {cart.map(product => {
+              return (
+                <button
+                  className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                  onClick={() => product.id}
+                >
+                  {product.title} - ${product.price} (Qty: {product.quantity})
+                </button>
+              )
+            })}
           </div>
 
           <pre>{JSON.stringify(cart, null, 2)}</pre>
