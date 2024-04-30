@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart, removeFromCart } from "../../store/cart";
 
 import { TbShoppingBag } from "react-icons/tb";
 
@@ -8,11 +10,13 @@ const Header = () => {
 
   const cart = useSelector(state => state.cart)
 
+  const dispatch = useDispatch()
+
   const classSidebar = 'fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-slate-100 w-80 text-black '
 
   const toggleSidebar = () => setOpen(!open)
 
-  const cartTotal = 0
+  const cartTotal = cart.reduce((acc, product) => acc + product.quantity, 0)
 
   return (
     <div className="bg-lime-600 text-white py-4 px-6 w-full fixed top-0">
@@ -45,6 +49,7 @@ const Header = () => {
             <div className="py-3">
               <button
                 className="w-full text-slate-900 bg-red-400 hover:bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                onClick={() => dispatch(clearCart())}
               >
                 Clean Cart
               </button>
@@ -55,8 +60,9 @@ const Header = () => {
             {cart.map(product => {
               return (
                 <button
+                  key={product.id}
                   className="text-slate-900 bg-yellow-400 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-                  onClick={() => product.id}
+                  onClick={() => dispatch(removeFromCart(product.id))}
                 >
                   {product.title} - ${product.price} (Qty: {product.quantity})
                 </button>
