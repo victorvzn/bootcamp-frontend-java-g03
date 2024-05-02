@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const fetchPokemons = async () => {
   const url = 'https://pokeapi.co/api/v2/pokemon'
 
@@ -19,7 +21,13 @@ export default async function Home() {
 
       <ol>
         {pokemons.map(pokemon => {
-          return <li key={pokemon.url}>{pokemon.name}</li>
+          return (
+            <li key={pokemon.url}>
+              <Link href={`/${pokemon.name}`}>
+                {pokemon.name}
+              </Link>
+            </li>
+          )
         })}
       </ol>
     </>
