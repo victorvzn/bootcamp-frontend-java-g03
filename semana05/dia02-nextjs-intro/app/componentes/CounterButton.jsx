@@ -10,7 +10,7 @@ const CounterButton = () => {
       className="py-2 px-4 bg-orange-400 rounded-lg"
       onClick={() => setCounter(counter + 1)}
     >
-      Button {counter}
+      Counter {counter}
     </button>
   )
 }
