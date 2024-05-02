@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'HOLA ABOUT PAGE',
+  description: 'Página con información de nuestra app'
+}
+
 const layout = ({ children }) => {
   return (
     <>
