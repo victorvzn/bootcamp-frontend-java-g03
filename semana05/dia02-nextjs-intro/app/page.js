@@ -1,7 +1,5 @@
-import styles from './styles.module.css'
-
 export default function Home() {
   return (
-    <h1 className={styles.home}>Hola Next.js</h1>
+    <h1 className="text-3xl text-center">Hola Next.js</h1>
   );
 }
