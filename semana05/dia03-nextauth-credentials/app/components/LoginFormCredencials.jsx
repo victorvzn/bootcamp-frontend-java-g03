@@ -2,10 +2,14 @@
 
 import { useState } from "react"
 
+import { useRouter } from "next/navigation"
+
 import { signIn, useSession, signOut } from 'next-auth/react'
 
 const LoginFormCredencials = () => {
   const { data: session, status } = useSession()
+
+  const router = useRouter()
 
   const [form, setForm] = useState({
     email: '',
@@ -22,7 +26,9 @@ const LoginFormCredencials = () => {
 
     console.log(responseNextAuth)
 
-    // TODO: Redirección a la ruta /dashboard
+    // DONE: Redirección a la ruta /dashboard
+
+    router.push('/dashboard')
   }
 
   return (
