@@ -5,6 +5,8 @@ import { useState } from "react"
 import { signIn, useSession, signOut } from 'next-auth/react'
 
 const LoginFormCredencials = () => {
+  const { data: session, status } = useSession()
+
   const [form, setForm] = useState({
     email: '',
     password: ''
@@ -19,6 +21,8 @@ const LoginFormCredencials = () => {
     })
 
     console.log(responseNextAuth)
+
+    // TODO: Redirección a la ruta /dashboard
   }
 
   return (
@@ -42,7 +46,18 @@ const LoginFormCredencials = () => {
 
         <input type="submit" value="Login" />
 
-        {JSON.stringify(form)}
+        {/* {JSON.stringify(form)} */}
+
+        {/* {JSON.stringify(session)} */}
+
+        {session?.user && (
+          <div>
+            <span>Hola {session.user.email}</span>
+            <button onClick={() => signOut()} className="text-red-500">Logout</button>
+          </div>
+        )}
+
+        {status}
       </form>
     </div>
   )
