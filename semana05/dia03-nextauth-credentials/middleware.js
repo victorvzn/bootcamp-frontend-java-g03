@@ -1,7 +1,7 @@
 import { auth } from "@/auth"
 
 export const config = {
-  matcher: ['/dashboard/:patch*']
+  matcher: ['/dashboard/:path*']
 }
 
 export default auth(req => {
