@@ -8,7 +8,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     Credentials({
       credentials: {
         email: {},
-        password: {}
+        password: {},
       },
       async authorize (credentials, req) {
         // Aquí es donde haremos el llamado al endpoint de autenticación
