@@ -1,0 +1,12 @@
+### Listar productos
+
+GET http://localhost:3000/api/products
+
+### Crear un producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "Mouse",
+  "price": 80.90
+}
