@@ -18,8 +18,8 @@ Content-Type: application/json
 {
   "firstname": "Victor",
   "lastname": "G03",
-  "email": "test@gmail.com",
-  "password": ""
+  "email": "victorg03@gmail.com",
+  "password": "mipassword"
 }
 
 ### Login con el usuario de prueba
@@ -27,6 +27,6 @@ POST https://mockmentor.onrender.com/auth/login
 Content-Type: application/json
 
 {
-  "email": "test@gmail.com",
-  "password": ""
+  "email": "victorg03@gmail.com",
+  "password": "mipassword"
 }

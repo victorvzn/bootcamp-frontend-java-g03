@@ -1,7 +1,11 @@
+import LoginFormCredencials from "./components/LoginFormCredencials";
+
 export default function Home() {
   return (
     <main>
-      Auth with Next.js
+      <div>
+        <LoginFormCredencials />
+      </div>
     </main>
   );
 }
